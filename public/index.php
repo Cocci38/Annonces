@@ -15,13 +15,20 @@ define('DB_PWD', '');
 
 $router = new Router( $_GET['url']);
 
-// On appelle la fonction index et show dans le bloc BlogController
-$router->get('/', 'App\Controllers\AnnonceController@index'); // Un chemin '/' et une action BlogController@index' (le controller @ la méthode)
+// On appelle la fonction index et show dans le bloc AnnonceController
+$router->get('/', 'App\Controllers\AnnonceController@index'); // Un chemin '/' et une action AnnonceController@index' (le controller @ la méthode)
 $router->get('/produits/:id', 'App\Controllers\AnnonceController@show'); // Dans l'url on écrit produits/id
 $router->get('/formulaire', 'App\Controllers\AnnonceController@form');
+$router->get('/formulaire', 'App\Controllers\AnnonceController@modif');
+$router->get('/pdf/:id','App\Controllers\AnnonceController@showPdf');
+$router->get('/', 'App\Controllers\AnnonceController@search');
 
 $router->get('/formulaire', 'App\Controllers\Admin\ProduitController@create');
 $router->post('/formulaire', 'App\Controllers\Admin\ProduitController@createProduit');
+$router->post('/delete/:id', 'App\Controllers\Admin\ProduitController@delete');
+$router->get('/edit/:id', 'App\Controllers\Admin\ProduitController@edit');
+$router->post('/edit/:id', 'App\Controllers\Admin\ProduitController@update');
+
 
 // Pour vérifier que nos routes fonctionnent
 $router->run();

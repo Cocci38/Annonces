@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use DateTime;
+use PDO;
 class Produit extends Model{
 
     protected $titre;
@@ -18,14 +19,15 @@ class Produit extends Model{
 
 
     public function getCreatedAt(): string
+    // Fonction pour retourner la date
     {
         return (new DateTime($this->date))->format('d/m/Y');
     }
 
-    // public function getId()
-    // {
-    //     return $this->id;
-    // }
+    public function getId()
+    {
+        return $this->id;
+    }
 
     public function getTitre()
     {
@@ -130,6 +132,56 @@ class Produit extends Model{
         parent::create($data);
 
         return true;
+    }
+
+    public function update(int $id, Model $data, ?array $relations = null)
+    {
+        parent::update($id, $data);
+        
+        return true;
+    }
+
+    public function delete(int $id)
+    {
+        parent::delete($id);
+        
+        return true;
+    }
+
+    public function search($offset, $limit)
+    {
+        // Fonction pour effectuer la recherche
+        @$categorie = $_GET['categorie'];
+        @$envoyer=$_GET["envoyer"];
+        if(isset($envoyer)&& !empty(trim($categorie))){
+        $search = $this->conn->getPDO()->prepare("SELECT * FROM {$this->table} WHERE categorie LIKE '%$categorie%' ORDER BY date DESC LIMIT :offset, :limit");
+        $search->bindParam(':offset', $offset, PDO::PARAM_INT);
+        $search->bindParam(':limit', $limit, PDO::PARAM_INT);
+        $search->execute();
+        return $search->fetchAll(PDO::FETCH_ASSOC);
+        }
+    }
+
+    public function pagingSearch()
+    {
+        /* Fonction pour calculer le nombre d'élément dans la base de donnée (colonne id) utiliser dans la pagination pour la recherche
+        */
+        @$categorie = $_GET['categorie'];
+        $pagingSearch = $this->conn->getPDO()->prepare("SELECT COUNT(*) AS id FROM `produits` WHERE categorie LIKE '%$categorie%';");
+        $pagingSearch->setFetchMode(PDO::FETCH_ASSOC);
+        $pagingSearch->execute();
+        return $pagingSearch->fetch();
+    }
+
+    public function paging()
+    {
+        /* Fonction pour calculer le nombre d'élément dans la base de donnée (colonne id) utilise dans la pagination sur tous les produits
+        */
+        $paging = $this->conn->getPDO()->prepare("SELECT COUNT(*) AS id FROM `produits`;");
+        $paging->setFetchMode(PDO::FETCH_ASSOC);
+        $paging->execute();
+        return $paging->fetch();
+        //$nbannonce = (int) $result2->getId();
     }
 
 }

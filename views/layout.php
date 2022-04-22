@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
-    <link rel="icon" type="images/png" sizes="16x16" href="public\assets\logo">
+    <link rel="icon" type="images/png" sizes="16x16" href="../../Annonces/public/assets/logo">
     <meta charset="utf-8" />
     <title>Corner Shop</title>
     <link rel="stylesheet" href="<?= SCRIPTS . 'css' . DIRECTORY_SEPARATOR . 'style.css' ?>">
@@ -17,7 +17,10 @@
 <body>
     <header>
         <div class="logo">
-            <img src="public\assets\logo" alt="">
+            
+            <a href="/Annonces/"><img src="../../Annonces/public/assets/logo" alt="logo_corner_shop"></a>
+            
+
         </div>
         <div class="accroche">
             <h1>Achetez simplement <br>
@@ -25,26 +28,26 @@
         </div>
     </header>
     <div class="toolbar">
-        <div class="search">
-            <select name="categorie" id="categorie">
+        <form action="/Annonces/" method="get">
+        <div>
+            <select type="search" name="categorie" id="categorie">
                 <option hidden>Choisisez une rubrique</option>
                 <option value="automobile">Auto</option>
                 <option value="immobilier">Immobilier</option>
                 <option value="jardin">Jardin</option>
-                <option value="vetements">Vetements</option>
+                <option value="jeux">Jouets & Jeux Vidéo</option>
                 <option value="multimedia">Multimedia</option>
                 <option value="emploi">Emploi</option>
             </select>
+            <input class="search" type="submit" value="Rechercher" name="envoyer">
         </div>
+        </form>
         <div class="ajout">
             <a href="/Annonces/formulaire/"><button name="button">Créez une nouvelle annonce</button></a>
             
         </div>
 
     </div>
-
-    <h1>Liste des annonces</h1>
-
 
     <?= $content ?>
 
