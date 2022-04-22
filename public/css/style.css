@@ -12,7 +12,7 @@
 main#carousel {
   grid-row: 1/2;
   grid-column: 1/8;
-  width: 100vw;
+  width: 100%;
   height: 500px;
   display: flex;
   align-items: center;
@@ -109,9 +109,9 @@ input:nth-of-type(5):checked ~ main#carousel {
 }
 
 .formulaire {
-  width: 600px;
+  width: 60%;
   text-align: center;
-  border: solid 2px black;
+  border: solid 1px #194831;
 }
 
 label {
@@ -132,8 +132,8 @@ label {
   justify-content: center;
 }
 .form_modif .modif {
-  width: 600px;
-  border: solid 2px black;
+  width: 60%;
+  border: solid 1px #194831;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -211,9 +211,27 @@ header h1 {
   color: #FFFFFF;
 }
 
+select[type=search] {
+  font-family: "DM Sans", sans-serif;
+  background-color: #194831;
+  border: solid 1px;
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-size: 1.2em;
+  margin: 10px;
+  padding: 10px;
+}
+
+.annonces {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .annonce_container {
   font-family: "DM Sans", sans-serif;
-  border: solid 2px black;
+  border: solid 1px #194831;
+  width: 80%;
 }
 
 h1 {
@@ -222,7 +240,7 @@ h1 {
 
 h2 {
   text-align: center;
-  background-color: #519F50;
+  background-color: #194831;
   margin-top: 0px;
   color: #FFFFFF;
 }
@@ -268,6 +286,7 @@ h2 {
   font-weight: bold;
   margin: 10px;
   padding: 10px;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -296,10 +315,46 @@ h2 {
 .pagination {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
+  gap: 10px;
+}
+.pagination .page-item {
+  list-style-type: none;
+  text-decoration: none;
+  background-color: #194831;
+  border: solid 1px;
+  border-radius: 20px;
+  color: #FFFFFF;
+  font-size: 1.1em;
+  padding: 5px;
+  cursor: pointer;
+}
+.pagination .page-item:hover {
+  background-color: #FFFFFF;
+  color: #194831;
+}
+.pagination a[href] {
+  text-decoration: none;
+  background-color: #194831;
+}
+.pagination a[href]:hover {
+  background-color: #FFFFFF;
 }
 .pagination li {
+  list-style: none;
+}
+.pagination .page-nombre {
   list-style-type: none;
+  text-decoration: none;
+  color: #194831;
+  font-size: 1.1em;
+  padding: 5px;
+  cursor: pointer;
+}
+.pagination .page-nombre:hover {
+  background-color: #FFFFFF;
+  color: #194831;
 }
 
 /*# sourceMappingURL=style.css.map */

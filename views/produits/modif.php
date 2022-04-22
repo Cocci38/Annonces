@@ -1,6 +1,6 @@
 <h1>Modifier votre annonce</h1>
 
-    <h2><?= $params['produit']->getId() ?></h2>
+    <h2><?= $params['produit']->getTitre() ?></h2>
     <div class="form_modif">
     <div class="modif">
     <form action="/Annonces/edit/<?= $params['produit']->getId() ?>" method="POST" enctype="multipart/form-data">
@@ -47,4 +47,6 @@
     </form>
 </div>
 </div>
-<a class="btnadd" href="/Annonces/"><button class="seebtn">Retour</button></a>
+<div class="btnadd">
+<a href="/Annonces/"><button class="seebtn">Retour</button></a>
+</div>

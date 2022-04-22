@@ -1,11 +1,11 @@
 
 <div class="show">
 <div class="infos_show">
-<h2>Titre : <?= $params['produit']->getTitre() ?></h2>
+<h2><?= $params['produit']->getTitre() ?></h2>
 <p>Categorie : <?= $params['produit']->getCategorie() ?></p>
-<p>Date : <?= $params['produit']->getCreatedAt() ?></p>
+<p>Publié le <?= $params['produit']->getCreatedAt() ?></p>
 <p>Description : <?= $params['produit']->getDescription() ?></p>
-<p>Prix : <?= $params['produit']->getPrix() ?></p>
+<p>Prix : <?= $params['produit']->getPrix() ?> €</p>
 </div>
 
 <div class="caroussel_container">

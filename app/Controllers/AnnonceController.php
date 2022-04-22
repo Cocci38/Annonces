@@ -41,7 +41,7 @@ class AnnonceController extends Controller {
         - annonces pour la fonction all (sélection de tous les produits)
         - pages pour la pagination sur tous les produits
         - pagesSearch pour la pagination sur la recherche*/
-        return $this->view('produits.index', compact('produits', 'annonces', 'pages', 'pagesSearch', 'pagingSearch'));
+        return $this->view('produits.index', compact('produits', 'annonces', 'pages', 'pagesSearch'));
     }
 
     public function show(int $id)

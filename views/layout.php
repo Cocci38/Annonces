@@ -27,27 +27,7 @@
                 de particulier à particulier !</h1>
         </div>
     </header>
-    <div class="toolbar">
-        <form action="/Annonces/" method="get">
-        <div>
-            <select type="search" name="categorie" id="categorie">
-                <option hidden>Choisisez une rubrique</option>
-                <option value="automobile">Auto</option>
-                <option value="immobilier">Immobilier</option>
-                <option value="jardin">Jardin</option>
-                <option value="jeux">Jouets & Jeux Vidéo</option>
-                <option value="multimedia">Multimedia</option>
-                <option value="emploi">Emploi</option>
-            </select>
-            <input class="search" type="submit" value="Rechercher" name="envoyer">
-        </div>
-        </form>
-        <div class="ajout">
-            <a href="/Annonces/formulaire/"><button name="button">Créez une nouvelle annonce</button></a>
-            
-        </div>
 
-    </div>
 
     <?= $content ?>
 

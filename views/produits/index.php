@@ -1,4 +1,22 @@
-<!-- <h1>Liste des annonces</h1> -->
+<div class="toolbar">
+        <form action="/Annonces/" method="get">
+        <div>
+            <select type="search" name="categorie" id="categorie">
+                <option hidden>Choisisez une rubrique</option>
+                <option value="automobile">Auto</option>
+                <option value="immobilier">Immobilier</option>
+                <option value="jardin">Jardin</option>
+                <option value="jeux">Jouets & Jeux Vidéo</option>
+                <option value="multimedia">Multimedia</option>
+                <option value="emploi">Emploi</option>
+            </select>
+            <input class="search" type="submit" value="Rechercher" name="envoyer">
+        </div>
+        </form>
+        <div class="ajout">
+            <a href="/Annonces/formulaire/"><button name="button">Créez une nouvelle annonce</button></a>
+        </div>
+    </div>
 <?php
 //echo "<pre>",var_dump($params),"</pre>";die();
 //echo "<pre>",print_r($params['pages']),"</pre>";die();
@@ -10,6 +28,7 @@ if ($envoyer==true) {?>
     <?php for ($i=0; $i <count($params['produits']); $i++) { 
         
     ?>
+    <div class="annonces">
         <div class="annonce_container">
             <h2 class="categorie_annonce"><?= $params['produits'][$i]['categorie']?></h2>
             <div class="contenu">
@@ -25,6 +44,7 @@ if ($envoyer==true) {?>
             </div>
             <a class="voir" href="/Annonces/produits/<?= $params['produits'][$i]['id'] ?>"><button class="seebtn">Voir le produit</button></a>
         </div>
+    </div>
         <br>
 
 
@@ -61,9 +81,8 @@ if ($envoyer==true) {?>
         <?php
 
 //print_r($params);
-foreach ($params['annonces'] as $produit) :
-
-?>
+foreach ($params['annonces'] as $produit) :?>
+<div class="annonces">
     <div class="annonce_container">
         <h2 class="categorie_annonce"><?= $produit->getCategorie() ?></h2>
         <div class="contenu">
@@ -79,7 +98,9 @@ foreach ($params['annonces'] as $produit) :
         </div>
         <a class="voir" href="/Annonces/produits/<?= $produit->getId() ?>"><button class="seebtn">Voir le produit</button></a>
     </div>
+</div>
     <br>
+    
 <?php endforeach ?>
 <?php
     if(isset($_GET['page']) && !empty($_GET['page'])){
@@ -92,19 +113,19 @@ foreach ($params['annonces'] as $produit) :
         <ul class="pagination">
 <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
             <?php if ($currentPage  > 1) : ?> 
-                <li class="page-item"><a href="/Annonces/?page=<?= $currentPage - 1 ?>" class="page-link"><button class="seebtn">Précédent</button></a></li>
+                <li><a href="/Annonces/?page=<?= $currentPage - 1 ?>" class="page-item" >Précédent</a></li>
             <?php endif ?>
 
 <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
             <?php for($page = 1;  $page <= $params['pages'];  $page++): ?>
-                <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
-                    <a href="/Annonces/?page=<?= $page ?>/"><button class="seebtn"><?= $page ?></button></a>
+                <li <?= ($currentPage == $page) ? "active" : "" ?>>
+                    <a href="/Annonces/?page=<?= $page ?>/" class="page-nombre" ><?= $page ?></a>
                 </li>
             <?php endfor ?>
 
 <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
             <?php if ($currentPage < $params['pages']) : ?> 
-                <li class="page-item"><a href="/Annonces/?page=<?= $currentPage + 1 ?>" class="page-link"><button class="seebtn">Suivant</button></a></li>
+                <li><a href="/Annonces/?page=<?= $currentPage + 1 ?>"  class="page-item">Suivant</a></li>
             <?php endif ?>
         </ul>
     </nav>

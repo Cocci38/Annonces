@@ -69,17 +69,32 @@ header {
         cursor: pointer;
     }
 
-      button:hover {
+    button:hover {
         background-color: $green-darker;
         color: $white;
-      }
+    }
 
     }
 }
-
+select[type=search]{
+    font-family: 'DM Sans', sans-serif;
+    background-color: $green-darker;
+    border: solid 1px;
+    border-radius: 50px;
+    color: $white;
+    font-size: 1.2em;
+    margin: 10px;
+    padding: 10px;
+}
+.annonces{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .annonce_container{
     font-family: 'DM Sans', sans-serif;
-    border: solid 2px black;
+    border: solid 1px $green-darker;
+    width: 80%;
 }
 
 h1{
@@ -88,7 +103,7 @@ text-align: center;
 
 h2{
     text-align: center;
-    background-color: $green-light;
+    background-color: $green-darker;
     margin-top: 0px;
     color: $white;
 }
@@ -133,6 +148,7 @@ h2{
         font-weight: bold;
         margin: 10px;
         padding: 10px;
+        text-decoration: none;
         cursor: pointer;
         }
         .search:hover {
@@ -144,6 +160,10 @@ h2{
     width: 500px;
 }
 
+// .show{
+//     border: solid 1px;
+//     margin: 10px 100px;
+// }
 .infos_show{
     text-align: center;
     font-size: larger;
@@ -160,9 +180,49 @@ h2{
 .pagination{
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
-    li{
-        list-style-type: none;
-    }
+    gap: 10px;
     
+    .page-item{
+        list-style-type: none;
+        text-decoration: none;
+        background-color: $green-darker;
+        border: solid 1px;
+        border-radius: 20px;
+        color: $white;
+        font-size: 1.1em;
+        padding: 5px;
+        cursor: pointer;
+    }
+    .page-item:hover {
+        background-color: $white;
+        color: $green-darker;
+    }
+    a[href]{
+        text-decoration: none;
+        background-color: $green-darker;
+    }
+    a[href]:hover{
+        background-color: $white;
+    }
+    li{
+        list-style: none;
+    }
+    .page-nombre{
+        list-style-type: none;
+        text-decoration: none;
+        // border: solid 1px;
+        // border-radius: 10px;
+        color: $green-darker;
+        font-size: 1.1em;
+        padding: 5px;
+        cursor: pointer;
+    }
+    .page-nombre:hover{
+        background-color: $white;
+        color: $green-darker;
+    }
+
+
 }
