@@ -1,6 +1,6 @@
 <?php
      // Plusieurs destinataires
-     $to  = 'Albertmonteiro73@gmail.com'; // notez la virgule
+     $to  = 'onlinesv@outlook.fr'; // notez la virgule
 
      // Sujet
      $subject = 'Validation de votre annonce ';
@@ -237,10 +237,10 @@
      $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
      // En-têtes additionnels
-     $headers[] = 'To: bebert <Albertmonteiro73@gmail.com>';
-     $headers[] = 'From: Annonce <Albertproduc@gmail.com>';
-     $headers[] = 'Cc: Albertproduc@mail.com';
-     $headers[] = 'Bcc:Albertproduc@mail.com';
+     $headers[] = 'To: sv <onlinesv@outlook.fr>';
+     $headers[] = 'From: Annonce <sandra.villot038@gmail.com>';
+     $headers[] = 'Cc: sandra.villot038@gmail.com';
+     $headers[] = 'Bcc:sandra.villot038@gmail.com';
 
      // Envoi
      mail($to, $subject, $message, implode("\r\n", $headers));

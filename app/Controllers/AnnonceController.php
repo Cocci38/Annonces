@@ -68,7 +68,7 @@ class AnnonceController extends Controller {
     {
         // global $router;
         $produit = new Produit($this->getConnection());
-        var_dump($id);
+        //var_dump($id);
 
         $pdf = $produit->findById($id);
         
