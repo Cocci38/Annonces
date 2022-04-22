@@ -21,7 +21,7 @@ $router->get('/produits/:id', 'App\Controllers\AnnonceController@show'); // Dans
 $router->get('/formulaire', 'App\Controllers\AnnonceController@form');
 $router->get('/formulaire', 'App\Controllers\AnnonceController@modif');
 $router->get('/pdf/:id','App\Controllers\AnnonceController@showPdf');
-$router->get('/', 'App\Controllers\AnnonceController@search');
+$router->get('/index', 'App\Controllers\AnnonceController@search');
 
 $router->get('/formulaire', 'App\Controllers\Admin\ProduitController@create');
 $router->post('/formulaire', 'App\Controllers\Admin\ProduitController@createProduit');

@@ -29,33 +29,33 @@ if ($envoyer==true) {?>
 
 
         <?php } ?>
-        <?php
-            if(isset($_GET['page']) && !empty($_GET['page'])){
-                $currentPage = (int) strip_tags($_GET['page']);
-            }else{
-                $currentPage = 1;
-            }
-        ?>
-            <nav>
-                <ul class="pagination">
+        <!-- <?php
+            // if(isset($_GET['page']) && !empty($_GET['page'])){
+            //     $currentPage = (int) strip_tags($_GET['page']);
+            // }else{
+            //     $currentPage = 1;
+            // }
+        ?> -->
+            <!-- <nav>
+                <ul class="pagination"> -->
 <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
-                    <?php if ($currentPage  > 1) : ?> 
-                    <li class="page-item"><a href="?page=<?= $currentPage - 1 ?>" class="page-link"><button class="seebtn">Précédent</button></a></li>
-                    <?php endif ?>
+                     <!-- <?php if ($currentPage  > 1) : ?> 
+                    <li class="page-item"><a href="<?= $url ?>?page=<?= $currentPage - 1 ?>" class="page-link"><button class="seebtn">Précédent</button></a></li>
+                    <?php endif ?> -->
 
 <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
-                    <?php for($page = 1;  $page <= $params['pagesSearch'];  $page++): ?>
-                            <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
-                                <a href="?page=<?= $page ?>/"><button class="seebtn"><?= $page ?></button></a>
+                    <!-- <?php for($page = 1;  $page <= $params['pagesSearch'];  $page++): ?> -->
+                            <!-- <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
+                                <a href="/Annonces/?page=<?= $page ?>/"><button class="seebtn"><?= $page ?></button></a>
                             </li>
-                    <?php endfor ?>
+                    <?php endfor ?> -->
 
 <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
-                <?php if ($currentPage < $params['pagesSearch']) : ?> 
-                    <li class="page-item"><a href="?page=<?= $currentPage + 1 ?>" class="page-link"><button class="seebtn">Suivant</button></a></li>
+                <!-- <?php if ($currentPage < $params['pagesSearch']) : ?> 
+                    <li class="page-item"><a href="/Annonces/?page=<?= $currentPage + 1 ?>" class="page-link"><button class="seebtn">Suivant</button></a></li>
                 <?php endif ?>
                     </ul>
-            </nav>
+            </nav> --> 
         <?php } else{ ?>
             <h1>Liste des annonces</h1>
         <?php

@@ -18,7 +18,7 @@ class AnnonceController extends Controller {
         }
 
         // On détermine le nombre d'élément par page
-        $parPage = 2;
+        $parPage = 10;
         // On calcul le 1er élément de la page
         $premier = ($currentPage * $parPage) - $parPage;
         $produits = $produit->search($premier, $parPage);
@@ -34,14 +34,14 @@ class AnnonceController extends Controller {
         $nbSearch = $pagingSearch['id'];
         $pagesSearch = ceil($nbSearch / $parPage);
 
-        //echo "<pre>",print_r($pagesSearch),"</pre>";  die();
+        //echo "<pre>",print_r($pagingSearch),"</pre>";  die();
 
         /* On return : 
         - produits pour la fonction search (sélection pour la recherche)
         - annonces pour la fonction all (sélection de tous les produits)
         - pages pour la pagination sur tous les produits
         - pagesSearch pour la pagination sur la recherche*/
-        return $this->view('produits.index', compact('produits', 'annonces', 'pages', 'pagesSearch'));
+        return $this->view('produits.index', compact('produits', 'annonces', 'pages', 'pagesSearch', 'pagingSearch'));
     }
 
     public function show(int $id)
