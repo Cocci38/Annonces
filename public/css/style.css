@@ -334,13 +334,6 @@ h2 {
   background-color: #FFFFFF;
   color: #194831;
 }
-.pagination a[href] {
-  text-decoration: none;
-  background-color: #194831;
-}
-.pagination a[href]:hover {
-  background-color: #FFFFFF;
-}
 .pagination li {
   list-style: none;
 }
@@ -351,10 +344,6 @@ h2 {
   font-size: 1.1em;
   padding: 5px;
   cursor: pointer;
-}
-.pagination .page-nombre:hover {
-  background-color: #FFFFFF;
-  color: #194831;
 }
 
 /*# sourceMappingURL=style.css.map */

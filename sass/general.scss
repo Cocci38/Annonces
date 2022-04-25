@@ -9,15 +9,12 @@ body {
     accent-color: $green-light;
 }
 
-
-
 header {
 
     background-color: #519F50;
     display: flex;
     flex-direction: row;
     justify-content: center;
-
 
     .logo{
         width:600px;
@@ -174,7 +171,6 @@ h2{
     flex-direction: row;
     justify-content: flex-end;
     margin-right: 5%;
-
 }
 
 .pagination{
@@ -199,13 +195,6 @@ h2{
         background-color: $white;
         color: $green-darker;
     }
-    a[href]{
-        text-decoration: none;
-        background-color: $green-darker;
-    }
-    a[href]:hover{
-        background-color: $white;
-    }
     li{
         list-style: none;
     }
@@ -219,10 +208,4 @@ h2{
         padding: 5px;
         cursor: pointer;
     }
-    .page-nombre:hover{
-        background-color: $white;
-        color: $green-darker;
-    }
-
-
 }
